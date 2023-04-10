@@ -12,6 +12,7 @@
 """
 
 import sys
+import time
 import RPi.GPIO as GPIO
 import subprocess as run
 
@@ -25,6 +26,7 @@ GPIO.setup(GPIO_PIN_S, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(GPIO_PIN_A, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 while True:
+    time.sleep(0.5)
     if GPIO.input(GPIO_PIN_A) == GPIO.LOW:
         if GPIO.input(GPIO_PIN_S) == GPIO.HIGH:
             print("Shutdown!!")
