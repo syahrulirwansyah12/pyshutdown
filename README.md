@@ -17,7 +17,7 @@ crontab -e
 ```
 Then add this line
 ```bash
-@reboot python3 /path/to/your/python/script.py
+@reboot python /home/<user>/pyshutdown/shutdown.py
 ```
 5. Save and exit the crontab editor
 6. Reboot your Ubuntu machine
