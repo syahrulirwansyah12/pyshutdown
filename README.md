@@ -28,6 +28,6 @@ sudo reboot
 # GPIO Pin Used (Default)
 1. Connect header pin 7 to 3.3V (header pin 1) with 2.2k ohm resistor. Then, connect header pin 7 to GND (header pin 9) with a switch.
 2. Connect header pin 18 to GND (header pin 20) to ACTIVATE the auto-shutdown.
-3. Connect header pin 18 to 3.3V (header pin 17) to DEACTIVATE the auto-shutdown and use the reComputer-J202 normally. \
+3. Connect header pin 18 to 3.3V (header pin 17) to DEACTIVATE the auto-shutdown and use the reComputer-J202 normally.
 
 !!! If you don't connect header pin 18 to 3.3V nor GND the value will be floating and causing the reComputer-J202 to not work properly !!!
