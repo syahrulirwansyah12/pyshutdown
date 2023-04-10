@@ -24,6 +24,14 @@ Then add this line
 ```bash
 sudo reboot
 ```
+7. You can check whether the program is running or not by running
+```bash
+sudo systemctl status cron
+```
+or
+```bash
+ps -ef | grep python
+```
 
 # GPIO Pin Used (Default)
 1. Connect header pin 7 to 3.3V (header pin 1) with 2.2k ohm resistor. Then, connect header pin 7 to GND (header pin 9) with a switch.
