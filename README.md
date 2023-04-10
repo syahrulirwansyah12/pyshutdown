@@ -32,6 +32,7 @@ or
 ```bash
 ps -ef | grep python
 ```
+This will show all running Python processes.
 
 # GPIO Pin Used (Default)
 1. Connect header pin 7 to 3.3V (header pin 1) with 2.2k ohm resistor. Then, connect header pin 7 to GND (header pin 9) with a switch.
