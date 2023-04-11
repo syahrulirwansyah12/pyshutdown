@@ -9,7 +9,7 @@ sys.path.append('/usr/lib/python3/dist-packages')
 import gpiod as GPIO #library for linux GPIO
 
 # Enter your password
-PASSWORD = "nvidia123.."
+PASSWORD = sys.argv[1]
 
 # Header pin constant
 HEADER_PIN_7 = 'PS.04' #Used for shutdown
@@ -42,6 +42,12 @@ HEADER_PIN_40 = 'PT.06'
 # Consumer
 CONSUMER = 'gpio_shutdown'
 
+# Open chip function
+def open_chip():
+    #chip0 = GPIO.chip('/dev/gpiochip0', GPIO.chip.OPEN_BY_PATH)
+    chip1 = GPIO.chip('/dev/gpiochip1', GPIO.chip.OPEN_BY_PATH)
+    chip2 = GPIO.chip('/dev/gpiochip2', GPIO.chip.OPEN_BY_PATH)
+
 # Pin configuration function for input
 def pin_config_input(gpio_pin):
     gpio_pin_config = GPIO.line_request()
@@ -51,16 +57,13 @@ def pin_config_input(gpio_pin):
 
 # Open GPIO chip
 try:
-    #chip0 = GPIO.chip('/dev/gpiochip0', GPIO.chip.OPEN_BY_PATH)
-    chip1 = GPIO.chip('/dev/gpiochip1', GPIO.chip.OPEN_BY_PATH)
-    chip2 = GPIO.chip('/dev/gpiochip2', GPIO.chip.OPEN_BY_PATH)
+    open_chip()
 except:
     run.call("echo '" + PASSWORD + "' | sudo -S chmod 666 /dev/gpiochip0", shell=True)
     run.call("echo '" + PASSWORD + "' | sudo -S chmod 666 /dev/gpiochip1", shell=True)
     run.call("echo '" + PASSWORD + "' | sudo -S chmod 666 /dev/gpiochip2", shell=True)
     
-    chip1 = GPIO.chip('/dev/gpiochip1', GPIO.chip.OPEN_BY_PATH)
-    chip2 = GPIO.chip('/dev/gpiochip2', GPIO.chip.OPEN_BY_PATH)
+    open_chip()
 
 # Find lines in a chip
 try:
