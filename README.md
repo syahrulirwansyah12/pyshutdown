@@ -17,9 +17,10 @@ crontab -e
 ```
 Then add this line
 ```bash
-@reboot python /home/<user>/pyshutdown/shutdown.py
+@reboot python /home/<user>/pyshutdown/shutdown.py <user-password>
 ```
-Replace `<user>` with your username.
+Replace `<user>` with your username and `<user-password>` with your user password.
+
 5. Save and exit the crontab editor
 6. Reboot your Ubuntu machine
 ```bash
