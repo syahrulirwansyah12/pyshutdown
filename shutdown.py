@@ -42,8 +42,15 @@ HEADER_PIN_40 = 'PT.06'
 # Consumer
 CONSUMER = 'gpio_shutdown'
 
+# Chip variables
+chip0 = None
+chip1 = None
+chip2 = None
+
 # Open chip function
 def open_chip():
+    global chip0, chip1, chip2
+    
     #chip0 = GPIO.chip('/dev/gpiochip0', GPIO.chip.OPEN_BY_PATH)
     chip1 = GPIO.chip('/dev/gpiochip1', GPIO.chip.OPEN_BY_PATH)
     chip2 = GPIO.chip('/dev/gpiochip2', GPIO.chip.OPEN_BY_PATH)
